@@ -13,8 +13,12 @@ public class Order {
         this.discountPrice = discountPrice;
     }
 
-    public int calculatePrice() {
-        return itemPrice - discountPrice;
+    public int getDiscountPrice() {
+        return discountPrice;
+    }
+
+    public int getItemPrice() {
+        return itemPrice;
     }
 
     public String getItemName() {
@@ -25,28 +29,20 @@ public class Order {
         return memberId;
     }
 
-    public int getItemPrice() {
-        return itemPrice;
-    }
-
-    public int getDiscountPrice() {
-        return discountPrice;
+    public void setMemberId(Long memberId) {
+        this.memberId = memberId;
     }
 
     public void setDiscountPrice(int discountPrice) {
         this.discountPrice = discountPrice;
     }
 
-    public void setMemberId(Long memberId) {
-        this.memberId = memberId;
+    public void setItemPrice(int itemPrice) {
+        this.itemPrice = itemPrice;
     }
 
     public void setItemName(String itemName) {
         this.itemName = itemName;
-    }
-
-    public void setItemPrice(int itemPrice) {
-        this.itemPrice = itemPrice;
     }
 
     @Override
@@ -57,7 +53,5 @@ public class Order {
                 ", itemPrice=" + itemPrice +
                 ", discountPrice=" + discountPrice +
                 '}';
-
-        //System.out.println("order = " + order);
     }
 }

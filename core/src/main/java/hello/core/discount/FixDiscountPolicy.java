@@ -14,5 +14,6 @@ public class FixDiscountPolicy implements DisCountPolicy {
         } else {
             return 0;
         }
+        // VIP 면 1000원 할인, 아니면 할인 없음
     }
 }

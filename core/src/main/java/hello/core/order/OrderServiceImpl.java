@@ -8,11 +8,12 @@ import hello.core.member.MemoryMemberRepository;
 
 public class OrderServiceImpl implements OrderService {
 
-    private final MemberRepository memberRepository = new MemoryMemberRepository();  //
-    private final DisCountPolicy disCountPolicy = new FixDiscountPolicy();  // 고정 할인정책
+    private final MemberRepository memberRepository = new MemoryMemberRepository();
+    private final DisCountPolicy disCountPolicy = new FixDiscountPolicy();
 
     @Override
     public Order createOrder(Long memberId, String itemName, int itemPrice) {
+
         Member member = memberRepository.findById(memberId);
         int discountPrice = disCountPolicy.discount(member, itemPrice);
 
